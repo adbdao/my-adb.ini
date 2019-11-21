@@ -1,5 +1,5 @@
-## Accelon3的筆記與設定存檔  
-### 以及CBReader的書籤Bookmark\bookmark.bmk
+## Accelon3的筆記與設定  
+### 以及CBReader的書籤Bookmark\bookmark.bmk  
 這些筆記與設定…也許對別人不重要，但也是我的心得報告，還是留存，以便日後教學時用得上
 
 > 授權方式：https://creativecommons.org/licenses/by-nc-sa/3.0/tw/  
