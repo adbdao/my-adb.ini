@@ -24,14 +24,9 @@ for (var i = 0; i < k.length; i++) {
     if (/var ArrLi\s?\=/.test(k[i])) {
         k[i] = 'var ArrLi = ["' + d.join('","') + '"]'
     }
+    // 刪除不需要的檔
+    k[i]=k[i].replace(',"index.html"','').replace(',"dirToIndex.js"','').replace(',"lang"','')
 }
-// 好像無法在for of中使用正規，以下失敗
-// for(var i of k) {
-//     if (/var ArrLi\s?\=/.test(k[i])) {
-//     if (i.search('var ArrLi=')) {
-//         i = 'var ArrLi = ["' + d.join('","') + '"]'
-//     }
-// }
 
 // 用相對路徑寫入檔案
 fs.writeFileSync('index.html', k.join('\n'), 'utf8')

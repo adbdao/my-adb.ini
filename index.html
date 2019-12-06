@@ -85,7 +85,7 @@
         }
     </style>
     <script>
-var ArrLi = ["戒律書畾.adb.ini","yugasidi4.adb.ini","README.md","lang","index.html","ght.adb.ini","dirToIndex.js","cbeta2011.adb.ini","bookmark.bmk","aodbs.adb.ini","accelon3.ini","accelon3 (2).ini"]
+        var ArrLi = ["戒律書畾.adb.ini", "yugasidi4.adb.ini", "taisho.adb.ini", "README.md", "ght.adb.ini", "cbeta2011.adb.ini", "bookmark.bmk", "aodbs.adb.ini", "accelon3.ini", "accelon3 (2).ini"]
         window.onload = function () {
             // 以傳統js語法，不用jQuery 或 jquery.mobile，動態插入網址，這樣，所有瀏覽器都支援
             // 因為不用ol li 所以自訂 有序清單 的數字
@@ -96,18 +96,33 @@ var ArrLi = ["戒律書畾.adb.ini","yugasidi4.adb.ini","README.md","lang","inde
                 // 加入超連結
                 aA.setAttribute('href', './' + k)
                 aA.innerHTML = '　' + j + '.　' + k
+                // 加入data*名稱，才可動態查詢，有了這個屬性，可以用 CSS 來獲取
+                g.setAttribute('data-title', k.toLowerCase())
                 g.className = 'small'
                 g.appendChild(aA)
                 mula.appendChild(g)
                 j++
             }
         }
+        function dt() {
+            // 查詢，並動態呈現
+            // 把輸入值轉小寫，就可以大小寫通查，因為在data-title已轉小寫
+            var x = search.value.toLowerCase()
+            if (!x) {
+                // 當沒有數值的時候，清空style，避免清空的時候無法還原所有的清單
+                search_style.innerHTML = ''
+            } else {
+                // style 裡面動態寫入寫入下方的 CSS，如此一來，data-title 裡面只要有吻合的字串，就會顯示，沒有就會被加入display:none的屬性
+                search_style.innerHTML = '.small:not([data-title*="' + x + '"]) {display: none;}'
+            }
+        }
     </script>
+    <style id="search_style"></style>
 </head>
 
 <body>
     <div id="mula">
-        <h1 class="big">Accelon3的筆記與設定</h1>
+        <h1 class="big">Accelon3的筆記與設定 <input type="text" id="search" style="height:14pt;width:100px;" placeholder="輸入關鍵字查詢" onkeyup="dt()"></h1>
         <div class="small"><a href="http://adbdao.blogspot.com/2018/07/blog-post.html">　↗　部落格的資料連結點　↗</a></div>
     </div>
 </body>
