@@ -25,7 +25,7 @@ for (var i = 0; i < k.length; i++) {
         k[i] = 'var ArrLi = ["' + d.join('","') + '"]'
     }
     // 刪除不需要的檔
-    k[i]=k[i].replace(',"index.html"','').replace(',"dirToIndex.js"','').replace(',"dir.js"','').replace(',"lang"','')
+    k[i]=k[i].replace(',"index.html"','').replace(',"dirToIndex.js"','').replace(',"dir.js"','').replace(',"lang"','').replace(',"debug.log"','')
 }
 
 // 用相對路徑寫入檔案
