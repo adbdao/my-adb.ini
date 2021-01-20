@@ -5,9 +5,6 @@
 >> 展示網址 https://adbdao.github.io/my-adb.ini/  
   
 ---  
->> 授權方式：https://creativecommons.org/licenses/by-nc-sa/3.0/tw/  
-  
----  
 #### Git常用指令  
 * 刪除上一次推送。出問題時，使用此命令  
 git remote rm origin  
