@@ -6,36 +6,43 @@
     <title>Accelon3的筆記與設定</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <base target="_blank">
-    <link rel="icon" href="老和尚的蓮花.ico"/>
+    <link rel="icon" href="老和尚的蓮花.ico" />
     <style>
         /**{border-radius: 22px;}*/
-        
+
         body {
             background: black;
         }
-        
+
         .pink {
             height: 30px;
             background: pink;
             color: navy;
         }
-        
-         ::selection {
+
+        .cy {
+            height: 30px;
+            background: cyan;
+            /* font-weight: bold; */
+        }
+
+        ::selection {
             background: darkred;
             color: yellow;
         }
-        
-         ::-moz-selection {
+
+        ::-moz-selection {
             background: darkred;
             color: yellow;
         }
-        
+
         #mula {
             width: 80vw;
             margin: 0 10vw;
         }
+
         /*暗色主題*/
-        
+
         .big {
             background: darkslategray;
             color: tomato;
@@ -43,27 +50,27 @@
             font-family: '標楷體';
             line-height: 36pt;
         }
-        
+
         a {
             color: yellow;
             font-size: 14pt;
             text-decoration: none;
         }
-        
+
         .small {
             line-height: 30pt;
             border: 2px solid black;
             background: -webkit-linear-gradient(top, #888 0%, #555 15%, #333 85%, #111 100%);
             background: linear-gradient(top, #888 0%, #555 15%, #333 85%, #111 100%);
         }
-        
+
         .small:hover {
             border-color: green lime lime green;
             border-width: 2px;
             border-style: solid;
             background: darkgreen;
         }
-        
+
         .small:active {
             border-color: indigo #f3f #f6f indigo;
             border-width: 3px;
@@ -72,7 +79,7 @@
         }
     </style>
     <script>
-var ArrLi = ["西藏生死書.adb.ini","戒律書畾.adb.ini","yugasidi4.adb.ini","wxzj.adb.ini","vinayanp.adb.ini","vinaya2.adb.ini","tts_lecture-ebook.adb.ini","taisho.adb.ini","samgha_picture.adb.ini","README.md","rdg2011.adb.ini","paauk.adb.ini","ini2.js","ini.js","ini.cmd","ght.adb.ini","cbeta2011.adb.ini","bookmark.bmk","aodbs.adb.ini","accelon3目錄.html","accelon3.ini","accelon3 (2).ini"]
+        var ArrLi = ["西藏生死書.adb.ini", "戒律書畾.adb.ini", "yugasidi4.adb.ini", "wxzj.adb.ini", "vinayanp.adb.ini", "vinaya2.adb.ini", "tts_lecture-ebook.adb.ini", "taisho.adb.ini", "samgha_picture.adb.ini", "README.md", "rdg2011.adb.ini", "paauk.adb.ini", "ini2.js", "ini.js", "ini.cmd", "ght.adb.ini", "cbeta2011.adb.ini", "bookmark.bmk", "aodbs.adb.ini", "accelon3目錄.html", "accelon3.ini", "accelon3 (2).ini"]
         window.onload = function () {
             // 以傳統js語法，不用jQuery 或 jquery.mobile，動態插入網址，這樣，所有瀏覽器都支援
             // 因為不用ol li 所以自訂 有序清單 的數字
@@ -133,8 +140,10 @@ var ArrLi = ["西藏生死書.adb.ini","戒律書畾.adb.ini","yugasidi4.adb.ini
         <h1 class="big">Accelon3的筆記與設定
             <input type="text" id="search" style="height:14pt;" placeholder="輸入關鍵字查詢" onkeyup="dt()">
             <!--後來檔案太多了，所以想要作「篩選按鈕」-->
-            <input id="Acc" type="button" class="pink" value="篩選出Accelon3檔案" onclick="MyIni('.ini')">
-            <input id="cbr" type="button" class="pink" value="篩選出CBReader書籤" onclick="MyIni('.bmk')">
+            <input id="Acc" type="button" class="pink" value="僅Accelon3檔案" onclick="MyIni('.ini')">
+            <input id="cbr" type="button" class="pink" value="僅CBReader書籤" onclick="MyIni('.bmk')">
+            <input id="cbr" type="button" class="cy" value="僅js" onclick="MyIni('.js')">
+            <input id="cbr" type="button" class="cy" value="僅cmd" onclick="MyIni('.cmd')">
             <input id="nocolor" type="button" value="淺色主題">
             <!--最後再放</h1>才會在一行中呈現-->
         </h1>
